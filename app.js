@@ -3,11 +3,16 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 
-const app = express();
+const app = express(); // <-- O 'app' é criado aqui
 
 // Middlewares
 app.use(express.json());
 app.use(cors());
+
+// Rota raiz para o health check do Render  <<<<<< O LUGAR CORRETO É AQUI
+app.get('/', (req, res) => {
+  res.send('API da Loja no ar e funcionando!');
+});
 
 // Conectar ao MongoDB
 mongoose.connect(process.env.MONGO_URI)
