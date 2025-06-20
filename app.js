@@ -25,7 +25,8 @@ const produtoRoutes = require('./routes/produtos');
 app.use('/produtos', produtoRoutes);
 console.log('5. Rotas de produtos registradas.');
 
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
+
 
 // Conecta ao MongoDB e, SE TIVER SUCESSO, inicia o servidor
 console.log('6. Tentando conectar ao MongoDB...');
